@@ -1,4 +1,4 @@
 oj-solutions
 ============
 
-Online Judge Solutions
+Online Judge Solutions for ACM-ICPC style problems
