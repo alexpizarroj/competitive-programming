@@ -1,0 +1,22 @@
+Interconnect all vertices reacheable from each other with INF capacity.
+- This will model the ability to jump from any vertex to another within the limit D
+
+From every vertex u to every other reachable vertex v: There's got to be a shared
+limit of moves that one can make from this u to any v.
+- This situation can be modeled as vertex capacity (capacity = jump resistance)
+  because moving out of a vertex to another will decrease the Vin -> Vout edge.
+
+For each vertex elegible as a meeting point:
+- Let's call the meeting point m.
+- Connect m with the sink t (m->t) with INF capacity.
+  For the remaining vertices that have penguins:
+  - Connect the source to them with the penguins as edge capacity.
+
+DETAILS:
+We'll have 2*n+2 vertices: 2*n for the in-out ice floes, and 2 for the source and sink.
+First n vertices will be the "in" ones, next n will be the "out" ones.
+Source and sink doesn't have capacities.
+- Iterar sobre todos los vertices: Darle un id al in y al out. Poner su capacidad in-out.
+- Iterar sobre todos los vertices: iterar sobre los vecinos alcanzables y poner los enlaces correspondientes.
+- Conectar el sink con todos los vertices, igual que el source. Poner cero en la capacidad de los enlaces de ida y vuelta.
+- Por cada prueba de meeting point, poner las capacidades que correspondan para las conecciones y correr.

@@ -1,0 +1,88 @@
+#include <iostream>
+#include <cstdio>
+#include <vector>
+#include <set>
+#include <map>
+#include <stack>
+#include <queue>
+#include <list>
+#include <sstream>
+#include <algorithm>
+#include <string>
+#include <cstring>
+#include <cstdlib>
+#include <memory.h>
+#include <cmath>
+#include <climits>
+#include <cctype>
+using namespace std;
+#define FOR(i,n) for((i)=0; (i)<(n); (i)++)
+#define REP(i,n) for((i)=1; (i)<=(n); (i)++)
+#define PB push_back
+#define MP make_pair
+#define all(v) (v).begin(), (v).end()
+#define set(a,v) memset(a, v, sizeof(a))
+#define len(a) (int)(a.length())
+
+#define MAX_K_VAL 100000
+#define MAX_N_VAL 1000000000
+#define SPACE 15625001
+#define C 64
+typedef unsigned long long ull;
+int knownValues[MAX_K_VAL];
+ull used[SPACE];
+
+
+inline void markAsUsed(const int n)
+{
+    used[n/C] |= 1<<(n%C);
+}
+
+inline bool isUsed(const int n)
+{
+    return (used[n/C] & 1<<(n%C)) > 0;
+}
+
+int main() {
+	#ifndef ONLINE_JUDGE
+    freopen("data.in", "r", stdin);
+	#endif
+
+    int t,T,n,k;
+    int a,b,c,r;
+    int i;
+
+    scanf("%d", &T);
+    REP(t,T)
+    {
+        scanf("%d %d", &n, &k);
+        scanf("%d %d %d %d", &a, &b, &c, &r);
+
+        set(used,0);
+        knownValues[0] = a;
+        markAsUsed(a);
+        for(i=1;i<k;i++)
+        {
+            knownValues[i] = ( ((b%r)*(knownValues[i-1]%r))%r + c%r ) % r;
+            markAsUsed(knownValues[i]);
+        }
+
+        i = 0;
+        while( k < n )
+        {
+            if( !isUsed(i) )
+                k++, i++;
+            else
+                i++;
+        }
+        printf("%d\n", i);
+//        FOR(i,k)
+//        {
+//            printf("%d ", knownValues[i]);
+//        }
+//        puts("\n------");
+    }
+
+    return 0;
+}
+

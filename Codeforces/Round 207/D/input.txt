@@ -1,0 +1,9 @@
+100 10
+a
+aaaaaaaaaa
+1 1
+abacaba
+abzczzz
+2 3
+rzr
+az
