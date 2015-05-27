@@ -1,3 +1,6 @@
+/*
+** @author Alex Erick Pizarro Jimenez
+*/
 #include <bits/stdc++.h>
 using namespace std;
 
