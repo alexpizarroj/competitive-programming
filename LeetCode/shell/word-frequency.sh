@@ -8,8 +8,6 @@ while read line; do
   done
 done < words.txt
 
-for word in "${!freq[@]}"; do echo "${freq["$word"]} $word"; done |
-  sort -n -r |
-  while read -a line; do
-    echo ${line[1]} ${line[0]}
-  done
+for word in "${!freq[@]}"; do
+  echo "$word ${freq["$word"]}"
+done | sort -n -r -k2
