@@ -1,3 +1,4 @@
+// Solved by José de la Campa
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -77,7 +78,6 @@ int main() {
 
   int n;
   while (cin >> n) {
-
     int ansa, ansb;
     ansa = ansb = 0;
 
@@ -94,7 +94,6 @@ int main() {
     }
 
     cout << ansa << ' ' << ansb << endl;
-
   }
 
   return 0;

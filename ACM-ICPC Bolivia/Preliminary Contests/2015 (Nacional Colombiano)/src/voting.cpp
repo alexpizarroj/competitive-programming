@@ -1,3 +1,4 @@
+// Solved by Alex Pizarro
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -47,7 +48,8 @@ int main() {
           }
         }
 
-        //cout << "Duel score for i=" << i << " and j=" << j << " is " << i_val << " and " << j_val << endl;
+        // cout << "Duel score for i=" << i << " and j=" << j << " is " << i_val
+        // << " and " << j_val << endl;
 
         // Duel result edges
         if (i_val < j_val) {

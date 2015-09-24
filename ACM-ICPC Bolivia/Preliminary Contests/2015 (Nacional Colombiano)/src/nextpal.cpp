@@ -1,3 +1,4 @@
+// Solved by Alex Pizarro
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -46,7 +47,7 @@ string getNext(string s) {
     if (i == m - 1) {
       char c = s[i] + 1;
       s[i] = s[n - i - 1] = c;
-      //break;
+      // break;
 
     } else if (done[i + 1]) {
       int p = i + 1;

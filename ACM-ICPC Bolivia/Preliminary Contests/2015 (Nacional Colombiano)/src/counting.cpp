@@ -1,3 +1,4 @@
+// Solved by Gabriel Garcia
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -17,14 +18,14 @@ string normalizar(string expa) {
       sa[na++] = c;
     } else if (c >= 'a' && c <= 'z') {
       sa[na++] = 'a';
-    }else if (c >= '0' && c <= '9') {
+    } else if (c >= '0' && c <= '9') {
       sa[na++] = 'a';
       i += 1;
       while (expa[i] >= '0' && expa[i] <= '9') {
         i += 1;
       }
       i -= 1;
-    } else { // operador
+    } else {  // operador
       sa[na++] = 'b';
     }
   }
@@ -78,7 +79,7 @@ int main() {
     string norma = normalizar(expa);
     string normb = normalizar(expb);
 
-    //cout << norma << "! in !" << normb << endl;
+    // cout << norma << "! in !" << normb << endl;
 
     prefixFunction(norma);
     int ans = kmp(norma, normb);
