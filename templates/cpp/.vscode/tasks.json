@@ -6,11 +6,8 @@
         {
             "taskName": "build-current-programming-task",
             "type": "shell",
-            "command": "build.bat",
-            "group": {
-                "kind": "build",
-                "isDefault": false
-            }
+            "command": "build-current-task.bat",
+            "group": "build"
         }
     ]
 }
