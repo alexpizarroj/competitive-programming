@@ -60,18 +60,18 @@ bool operator<(const Lizard& lhs, const Lizard& rhs) {
   return lhs.sqr_dist_to_tv < rhs.sqr_dist_to_tv;
 }
 
-vector<int> build_lis(const vector<int>& sequence) {
-  vector<int> result;
+int lis_length(const vector<int>& sequence) {
+  vector<int> tmp;
 
   for (int x : sequence) {
-    vector<int>::iterator it = lower_bound(result.begin(), result.end(), x);
-    if (it == result.end())
-      result.push_back(x);
+    vector<int>::iterator it = lower_bound(tmp.begin(), tmp.end(), x);
+    if (it == tmp.end())
+      tmp.push_back(x);
     else
       *it = x;
   }
   
-  return result;
+  return (int)tmp.size();
 }
 
 int gcd(int a, int b) {
@@ -102,7 +102,7 @@ int solve(const Point& tv, const vector<Lizard>& lizards) {
 
   auto process_group = [&]() {
     if (group.size() == 0) return;
-    result += build_lis(group).size();
+    result += lis_length(group);
   };
 
   for (int i = 0; i < n; ++i) {
