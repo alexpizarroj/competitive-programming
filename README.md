@@ -1,4 +1,4 @@
 competitive-programming
 =======================
 
-Solutions to programming exercises of all sorts.
+My solutions to competitive programming exercises, alongside some reference implementations.
