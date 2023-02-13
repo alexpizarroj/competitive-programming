@@ -21,9 +21,7 @@ private:
   const TValue neutral = 0;
 
   // Take two node values and return their combined result
-  TValue conquer(TValue a, TValue b) {
-    return a + b;
-  }
+  TValue conquer(TValue a, TValue b) { return a + b; }
 
   // Propagate lazy value for node `p`
   void propagate(int p, int L, int R) {
@@ -58,8 +56,7 @@ private:
   void build(int p, int L, int R, const vector<TValue> &A) {  // O(n)
     if (L == R) {
       st[p] = A[L];
-    }
-    else {
+    } else {
       int lc = l(p), rc = r(p);
       int m = (L+R)/2;
       build(lc, L  , m, A);
